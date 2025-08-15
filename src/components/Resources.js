@@ -45,9 +45,7 @@ export default function Resources() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">
-            Community Resources
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4">Community Resources</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Access important documents, reports, and guidelines to stay informed and engaged with our community initiatives.
@@ -57,14 +55,11 @@ export default function Resources() {
         {/* Resource Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {resources.map((resource, index) => {
-            const IconComponent = resource.icon;
-            const ButtonIcon = resource.buttonIcon;
-            
+            const IconComponent = resource.icon
+            const ButtonIcon = resource.buttonIcon
+
             return (
-              <div 
-                key={index} 
-                className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-              >
+              <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
                 {/* Icon Header */}
                 <div className={`bg-gradient-to-r ${resource.gradient} p-8 text-center relative`}>
                   <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
@@ -74,11 +69,7 @@ export default function Resources() {
 
                 {/* Content */}
                 <div className="p-6">
-                  <p className="text-gray-600 mb-6 leading-relaxed text-sm">
-                    {resource.description}
-                  </p>
-                  
-                  {/* Button */}
+                  <p className="text-gray-600 mb-6 leading-relaxed text-sm">{resource.description}</p>
                   <button className={`w-full bg-gradient-to-r ${resource.gradient} text-white py-3 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2`}>
                     <ButtonIcon className="w-4 h-4" />
                     {resource.buttonText}
@@ -88,16 +79,14 @@ export default function Resources() {
                 {/* Bottom accent */}
                 <div className={`h-1 bg-gradient-to-r ${resource.gradient}`}></div>
               </div>
-            );
+            )
           })}
         </div>
 
         {/* Additional Info Section */}
         <div className="mt-16 bg-white rounded-2xl shadow-lg p-8 border-t-4 border-emerald-500">
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">
-              Need Help Finding Something?
-            </h3>
+            <h3 className="text-2xl font-bold text-slate-800 mb-4">Need Help Finding Something?</h3>
             <p className="text-gray-600 mb-6 leading-relaxed max-w-2xl mx-auto">
               Can't find the resource you're looking for? Contact our community office for assistance or additional information about available services and documents.
             </p>

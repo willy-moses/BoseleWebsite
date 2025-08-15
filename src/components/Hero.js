@@ -45,11 +45,9 @@ export default function Hero() {
 
   useEffect(() => {
     if (!isAutoPlaying) return
-
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 6000)
-
     return () => clearInterval(timer)
   }, [isAutoPlaying])
 
@@ -91,12 +89,11 @@ export default function Hero() {
             }}
             priority={index === 0}
           />
-          {/* Gradient Overlay */}
           <div className={`absolute inset-0 bg-gradient-to-br ${slide.gradient}`} />
         </div>
       ))}
 
-      {/* Animated particles */}
+      {/* Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(20)].map((_, i) => (
           <div
@@ -132,38 +129,32 @@ export default function Hero() {
         onClick={() => setIsAutoPlaying(!isAutoPlaying)}
         className="absolute top-6 right-6 z-30 p-3 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all duration-300"
       >
-        {isAutoPlaying ? (
-          <Pause className="w-5 h-5" />
-        ) : (
-          <Play className="w-5 h-5 ml-0.5" />
-        )}
+        {isAutoPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
       </button>
 
       {/* Main Content */}
       <div className="absolute inset-0 flex items-center justify-center z-20 px-4">
-        <div className={`text-center text-white max-w-5xl mx-auto transform transition-all duration-1000 ${
-          isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
-        }`}>
-          {/* Subtitle */}
+        <div
+          className={`text-center text-white max-w-5xl mx-auto transform transition-all duration-1000 ${
+            isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}
+        >
           <div className="mb-4">
             <span className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-sm font-medium tracking-wide">
               {slides[currentSlide].subtitle}
             </span>
           </div>
 
-          {/* Main Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="block transform transition-all duration-700 delay-300">
               {slides[currentSlide].title}
             </span>
           </h1>
 
-          {/* Description */}
           <p className="text-lg md:text-xl lg:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto opacity-90 transform transition-all duration-700 delay-500">
             {slides[currentSlide].description}
           </p>
 
-          {/* Call-to-Action Button */}
           <div className="transform transition-all duration-700 delay-700">
             <Link
               href={slides[currentSlide].buttonLink}
@@ -187,11 +178,13 @@ export default function Hero() {
                 index === currentSlide ? 'scale-125' : 'hover:scale-110'
               }`}
             >
-              <div className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide
-                  ? 'bg-orange-400 shadow-lg shadow-orange-400/50'
-                  : 'bg-white/50 hover:bg-white/80'
-              }`}>
+              <div
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-orange-400 shadow-lg shadow-orange-400/50'
+                    : 'bg-white/50 hover:bg-white/80'
+                }`}
+              >
                 {index === currentSlide && (
                   <div className="absolute inset-0 bg-orange-400 rounded-full animate-ping opacity-75"></div>
                 )}
@@ -200,9 +193,8 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Progress Bar */}
         <div className="mt-4 mx-auto w-32 h-1 bg-white/20 rounded-full overflow-hidden">
-          <div 
+          <div
             className="h-full bg-gradient-to-r from-orange-400 to-red-400 rounded-full transition-all duration-300"
             style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
           />

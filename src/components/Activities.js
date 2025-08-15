@@ -65,7 +65,8 @@ export default function Activities() {
     {
       icon: ScalesIcon,
       title: 'Traditional Governance',
-      description: 'Facilitating kgotla meetings, mediating disputes, and maintaining our traditional decision-making processes.'
+      // Fixed quotes here by using double quotes
+      description: "Facilitating kgotla meetings, mediating disputes, and maintaining our traditional decision-making processes."
     }
   ]
 

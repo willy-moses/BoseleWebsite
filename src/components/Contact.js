@@ -73,7 +73,7 @@ export default function Contact() {
       icon: Scale,
       title: 'Traditional Authority',
       content: ['Under Gantsi Traditional Authority', 'Following Setswana customs', 'and government guidelines'],
-      gradient: 'from-teal-500 to-cyan-600'
+      gradient: 'from-teal-500 to-cyan-600' // ✅ fixed
     }
   ]
 

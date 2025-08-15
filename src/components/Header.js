@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-// Enhanced SVG icons with improved styling
+// SVG Icons
 const MenuIcon = ({ className }) => (
   <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -16,28 +16,7 @@ const CloseIcon = ({ className }) => (
   </svg>
 )
 
-const ChevronDownIcon = ({ className }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-  </svg>
-)
-
-const navigation = [
-  { name: 'Home', href: '#home' },
-  { name: 'About Us', href: '#about' },
-  { name: 'Activities', href: '#activities' },
-  { name: 'Statistics', href: '#statistics' },
-  { name: 'Calendar', href: '#calendar' },
-  { name: 'Gallery', href: '#gallery' },
-  { name: 'Resources', href: '#resources' },
-  { name: 'Committee', href: '#committee' },
-  { name: 'Community Voice', href: '#testimonials' },
-  { name: 'FAQ', href: '#faq' },
-  { name: 'News', href: '#news' },
-  { name: 'Contact', href: '#contact' },
-]
-
-// Enhanced Social Media SVG Icons with consistent styling
+// Social Icons
 const FacebookIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
@@ -68,6 +47,22 @@ const YouTubeIcon = ({ className }) => (
   </svg>
 )
 
+// Navigation & Social Links
+const navigation = [
+  { name: 'Home', href: '#home' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Activities', href: '#activities' },
+  { name: 'Statistics', href: '#statistics' },
+  { name: 'Calendar', href: '#calendar' },
+  { name: 'Gallery', href: '#gallery' },
+  { name: 'Resources', href: '#resources' },
+  { name: 'Committee', href: '#committee' },
+  { name: 'Community Voice', href: '#testimonials' },
+  { name: 'FAQ', href: '#faq' },
+  { name: 'News', href: '#news' },
+  { name: 'Contact', href: '#contact' },
+]
+
 const socialLinks = [
   { name: 'Facebook', href: 'https://facebook.com/bosele.kgotla', icon: FacebookIcon, color: '#1877F2' },
   { name: 'WhatsApp', href: 'https://wa.me/26771234567', icon: WhatsAppIcon, color: '#25D366' },
@@ -84,8 +79,6 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20)
-      
-      // Update active section based on scroll position
       const sections = navigation.map(item => item.href.substring(1))
       const scrollPosition = window.scrollY + 100
 
@@ -99,8 +92,7 @@ export default function Header() {
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Call once to set initial state
-    
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -118,13 +110,9 @@ export default function Header() {
         ? 'backdrop-blur-md shadow-2xl bg-gradient-to-r from-emerald-800/95 to-green-700/95' 
         : 'bg-gradient-to-r from-emerald-800 to-green-700'
     }`}>
-      {/* Decorative top line */}
       <div className="h-1 bg-gradient-to-r from-yellow-400 via-green-300 to-blue-400"></div>
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Header */}
         <div className="flex justify-between items-center py-4 lg:py-6">
-          {/* Logo Section */}
           <div className="flex items-center space-x-3 lg:space-x-4 group">
             <div className="relative">
               <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-white/20 to-white/10 rounded-2xl border-2 border-white/30 backdrop-blur-sm flex items-center justify-center text-white font-bold text-lg lg:text-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
@@ -212,11 +200,7 @@ export default function Header() {
       </div>
 
       {/* Mobile menu */}
-      <div className={`lg:hidden transition-all duration-500 ease-in-out ${
-        mobileMenuOpen 
-          ? 'max-h-screen opacity-100' 
-          : 'max-h-0 opacity-0 overflow-hidden'
-      }`}>
+      <div className={`lg:hidden transition-all duration-500 ease-in-out ${mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
         <div className="bg-emerald-900/95 backdrop-blur-md border-t border-white/20">
           <nav className="max-w-7xl mx-auto px-4 py-6">
             <ul className="space-y-2">

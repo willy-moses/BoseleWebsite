@@ -1,4 +1,5 @@
-// Statistics Icons
+'use client'
+
 const UsersIcon = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
     <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A3.02 3.02 0 0016.86 6H15c-.8 0-1.54.37-2.01.96l-.94 1.21c-.22.28-.26.67-.11.98l.9 1.87L9.5 12.8c-.49.2-.8.67-.8 1.2v4c0 1.1.9 2 2 2h7c1.1 0 2-.9 2-2zM12.5 11.5c.83 0 1.5-.67 1.5-1.5s-.67-1.5-1.5-1.5S11 9.17 11 10s.67 1.5 1.5 1.5zM5.5 6c1.11 0 2-.89 2-2s-.89-2-2-2-2 .89-2 2 .89 2 2 2zm2.5 16v-7H6v-2.5c0-1.1.9-2 2-2h2c.37 0 .72.11 1.02.3l1.54-.9c.28-.16.62-.24.96-.24.96 0 1.76.71 1.93 1.64L16.5 18H15v4h-7z"/>
@@ -34,10 +35,12 @@ export default function Statistics() {
   return (
     <section id="statistics" className="py-16 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#2c5530' }}>Community Impact at a Glance</h2>
+        <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#2c5530' }}>
+          Community Impact at a Glance
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
+            const IconComponent = stat.icon
             return (
               <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
                 <div className="text-4xl mb-4 opacity-70" style={{ color: '#4a7c59' }}>
@@ -46,7 +49,7 @@ export default function Statistics() {
                 <div className="text-4xl font-bold mb-2" style={{ color: '#2c5530' }}>{stat.number}</div>
                 <div className="text-gray-600 text-sm">{stat.label}</div>
               </div>
-            );
+            )
           })}
         </div>
       </div>

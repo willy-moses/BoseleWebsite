@@ -26,23 +26,23 @@ export default function News() {
       icon: <Wrench className="w-5 h-5" />,
       priority: 'low'
     }
-  ]
+  ];
 
   const getPriorityColor = (priority) => {
     switch (priority) {
-      case 'high': return 'border-red-400 bg-red-50'
-      case 'medium': return 'border-yellow-400 bg-yellow-50'
-      case 'low': return 'border-green-400 bg-green-50'
-      default: return 'border-blue-400 bg-blue-50'
+      case 'high': return 'border-red-400 bg-red-50';
+      case 'medium': return 'border-yellow-400 bg-yellow-50';
+      case 'low': return 'border-green-400 bg-green-50';
+      default: return 'border-blue-400 bg-blue-50';
     }
   }
 
   const getPriorityBadge = (priority) => {
     switch (priority) {
-      case 'high': return 'bg-red-100 text-red-800 border-red-200'
-      case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-200'
-      case 'low': return 'bg-green-100 text-green-800 border-green-200'
-      default: return 'bg-blue-100 text-blue-800 border-blue-200'
+      case 'high': return 'bg-red-100 text-red-800 border-red-200';
+      case 'medium': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+      case 'low': return 'bg-green-100 text-green-800 border-green-200';
+      default: return 'bg-blue-100 text-blue-800 border-blue-200';
     }
   }
 
@@ -75,7 +75,7 @@ export default function News() {
           {newsItems.map((item, index) => (
             <div 
               key={index} 
-              className={`group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-l-6 ${getPriorityColor(item.priority)} overflow-hidden`}
+              className={`group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-l-[6px] ${getPriorityColor(item.priority)} overflow-hidden`}
             >
               {/* Hover gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-indigo-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

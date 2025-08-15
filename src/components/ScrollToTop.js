@@ -30,17 +30,17 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 ${
-        isVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
-      }`}
+      className={`fixed bottom-6 right-6 w-12 h-12 text-white rounded-full shadow-lg z-50 transition-all duration-500 
+        ${isVisible ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-50 invisible'}
+        hover:scale-110 hover:shadow-xl`}
       style={{
         background: 'linear-gradient(135deg, #2c5530, #4a7c59)',
       }}
       onMouseEnter={(e) => {
-        e.target.style.background = 'linear-gradient(135deg, #1e3a21, #2c5530)';
+        e.target.style.background = 'linear-gradient(135deg, #1e3a21, #2c5530)'
       }}
       onMouseLeave={(e) => {
-        e.target.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)';
+        e.target.style.background = 'linear-gradient(135deg, #2c5530, #4a7c59)'
       }}
       title="Scroll to top"
     >

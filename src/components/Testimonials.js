@@ -35,7 +35,7 @@ export default function Testimonials() {
 
   useEffect(() => {
     if (!isAutoPlaying) return
-    
+
     const interval = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)
     }, 7000)
@@ -64,7 +64,7 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="relative py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-10 left-10 w-32 h-32 bg-blue-400 rounded-full blur-2xl animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-40 h-40 bg-purple-400 rounded-full blur-2xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-indigo-400 rounded-full blur-xl animate-pulse delay-500"></div>
@@ -130,7 +130,7 @@ export default function Testimonials() {
                     {/* Star rating */}
                     <div className="flex justify-center mb-6">
                       {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+                        <Star key={i} className="w-6 h-6 text-yellow-400" />
                       ))}
                     </div>
 
@@ -167,9 +167,7 @@ export default function Testimonials() {
                 key={index}
                 onClick={() => goToTestimonial(index)}
                 className={`relative transition-all duration-300 ${
-                  index === currentTestimonial 
-                    ? 'scale-125' 
-                    : 'hover:scale-110'
+                  index === currentTestimonial ? 'scale-125' : 'hover:scale-110'
                 }`}
               >
                 <div className={`w-4 h-4 rounded-full transition-all duration-300 ${

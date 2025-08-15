@@ -75,7 +75,7 @@ export default function About() {
               Join Our Community Initiative
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Together, we can create lasting positive change in our village. Your voice matters in shaping our community's future.
+              Together, we can create lasting positive change in our village. Your voice matters in shaping our community&apos;s future.
             </p>
             <button className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-8 py-3 rounded-full font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
               Get Involved
