@@ -88,7 +88,7 @@ export default function Resources() {
           <div className="text-center">
             <h3 className="text-2xl font-bold text-slate-800 mb-4">Need Help Finding Something?</h3>
             <p className="text-gray-600 mb-6 leading-relaxed max-w-2xl mx-auto">
-              Can't find the resource you're looking for? Contact our community office for assistance or additional information about available services and documents.
+              Can&apos;t find the resource you&apos;re looking for? Contact our community office for assistance or additional information about available services and documents.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2">

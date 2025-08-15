@@ -51,7 +51,7 @@ export default function QuickLinks() {
         {/* Additional Help Section */}
         <div className="mt-12 bg-white rounded-2xl shadow-lg p-6 border-t-4 border-blue-500">
           <div className="text-center">
-            <h3 className="text-xl font-bold text-slate-800 mb-3">Can't Find What You're Looking For?</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Can&apos;t Find What You&apos;re Looking For?</h3>
             <p className="text-gray-600 mb-4 text-sm max-w-2xl mx-auto">
               Visit our community office or contact us directly for assistance with any services not listed above.
             </p>

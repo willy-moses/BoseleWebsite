@@ -38,9 +38,7 @@ export default function FAQ() {
     }
   ]
 
-  const toggleItem = (index) => {
-    setOpenItem(openItem === index ? null : index)
-  }
+  const toggleItem = (index) => setOpenItem(openItem === index ? null : index)
 
   const getCategoryColor = (category) => {
     const colors = {
@@ -50,7 +48,7 @@ export default function FAQ() {
       'Communication': 'bg-orange-100 text-orange-800',
       'Projects': 'bg-teal-100 text-teal-800'
     }
-    return colors[category] || 'bg-gray-100 text-gray-800' // ✅ fixed
+    return colors[category] || 'bg-gray-100 text-gray-800'
   }
 
   return (
@@ -73,13 +71,12 @@ export default function FAQ() {
         {/* FAQ Items */}
         <div className="space-y-4">
           {faqItems.map((item, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
-            >
+            <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100">
               <button
                 onClick={() => toggleItem(index)}
                 className="w-full flex justify-between items-start p-6 text-left hover:bg-gray-50 transition-colors"
+                aria-expanded={openItem === index}
+                aria-controls={`faq-content-${index}`}
               >
                 <div className="flex-1 pr-4">
                   <div className="flex items-center gap-3 mb-2">
@@ -87,24 +84,25 @@ export default function FAQ() {
                       {item.category}
                     </span>
                   </div>
-                  <span className="font-bold text-slate-800 text-lg leading-tight group-hover:text-emerald-700 transition-colors">
+                  <span className="font-bold text-slate-800 text-lg leading-tight transition-colors">
                     {item.question}
                   </span>
                 </div>
                 <div className="flex-shrink-0 ml-4">
                   {openItem === index ? (
-                    <Minus className="w-6 h-6 text-emerald-600 transition-all duration-300" />
+                    <Minus className="w-6 h-6 text-emerald-600 transition-transform duration-300" />
                   ) : (
-                    <Plus className="w-6 h-6 text-emerald-600 transition-all duration-300 group-hover:scale-110" />
+                    <Plus className="w-6 h-6 text-emerald-600 transition-transform duration-300" />
                   )}
                 </div>
               </button>
-              
-              <div className={`transition-all duration-500 ease-in-out ${
-                openItem === index 
-                  ? 'max-h-96 opacity-100' 
-                  : 'max-h-0 opacity-0'
-              }`}>
+
+              <div
+                id={`faq-content-${index}`}
+                className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                  openItem === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}
+              >
                 <div className="px-6 pb-6">
                   <div className="w-full h-px bg-gradient-to-r from-emerald-200 to-green-200 mb-4"></div>
                   <p className="text-gray-600 leading-relaxed text-base">
@@ -123,7 +121,7 @@ export default function FAQ() {
               Still Have Questions?
             </h3>
             <p className="text-gray-600 mb-6 leading-relaxed max-w-2xl mx-auto">
-              Can't find the answer you&apos;re looking for? Our committee members are here to help. Reach out to us directly or attend our next community meeting.
+              Can&apos;t find the answer you&apos;re looking for? Our committee members are here to help. Reach out to us directly or attend our next community meeting.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-gradient-to-r from-emerald-500 to-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg">

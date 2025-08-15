@@ -39,10 +39,10 @@ export default function About() {
         {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => {
-            const IconComponent = feature.icon;
+            const IconComponent = feature.icon
             return (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
               >
                 {/* Icon Header with Gradient */}
@@ -64,7 +64,7 @@ export default function About() {
                 {/* Bottom accent */}
                 <div className={`h-1 bg-gradient-to-r ${feature.gradient}`}></div>
               </div>
-            );
+            )
           })}
         </div>
 

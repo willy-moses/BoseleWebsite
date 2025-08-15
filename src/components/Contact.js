@@ -73,7 +73,7 @@ export default function Contact() {
       icon: Scale,
       title: 'Traditional Authority',
       content: ['Under Gantsi Traditional Authority', 'Following Setswana customs', 'and government guidelines'],
-      gradient: 'from-teal-500 to-cyan-600' // ✅ fixed
+      gradient: 'from-teal-500 to-cyan-600'
     }
   ]
 
@@ -87,14 +87,14 @@ export default function Contact() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-blue-600 mx-auto rounded-full"></div>
           <p className="mt-6 text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Get in touch with our community development committee. We're here to listen, assist, and work together for our village's progress.
+            Get in touch with our community development committee. We&apos;re here to listen, assist, and work together for our village&apos;s progress.
           </p>
         </div>
 
         {/* Contact Information Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {contactItems.map((item, index) => {
-            const IconComponent = item.icon;
+            const IconComponent = item.icon
             return (
               <div key={index} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
                 {/* Icon Header */}
@@ -117,7 +117,7 @@ export default function Contact() {
                 {/* Bottom accent */}
                 <div className={`h-1 bg-gradient-to-r ${item.gradient}`}></div>
               </div>
-            );
+            )
           })}
         </div>
 
@@ -127,7 +127,9 @@ export default function Contact() {
             {isSubmitted && (
               <div className="bg-gradient-to-r from-green-100 to-emerald-100 border border-green-300 text-green-800 px-6 py-4 rounded-xl mb-8 flex items-center gap-3">
                 <CheckCircle className="w-6 h-6 text-green-600" />
-                <span className="font-medium">Your message has been sent successfully! We will get back to you soon.</span>
+                <span className="font-medium">
+                  Your message has been sent successfully! We will get back to you soon.
+                </span>
               </div>
             )}
             
@@ -136,9 +138,9 @@ export default function Contact() {
                 <Send className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-3xl font-bold text-slate-800 mb-2">Send us a Message</h3>
-              <p className="text-gray-600">We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+              <p className="text-gray-600">We&apos;d love to hear from you. Fill out the form below and we&apos;ll get back to you as soon as possible.</p>
             </div>
-            
+
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
