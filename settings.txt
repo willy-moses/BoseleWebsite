@@ -1,0 +1,4 @@
+root: C:\Users\william_PC\bosele-kgotla-nextjs 
+path: C:\Program Files\nodejs 
+arch: 64 
+proxy: none
