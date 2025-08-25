@@ -2,40 +2,46 @@
 export default function Committee() {
   const members = [
     {
-      name: 'Mr. Kgomotso Tshosa',
+      name: 'Mr. Komberes Monyatse ',
       position: 'Chairperson',
-      initials: 'KT',
+      initials: 'KM',
       description: 'Leading committee meetings and community initiatives. Experienced community leader with over 10 years of service.'
     },
     {
-      name: 'Mrs. Gorata Sekwati',
+      name: 'Mrs. Sandy Botshake',
       position: 'Vice Chairperson',
-      initials: 'GS',
+      initials: 'SB',
       description: 'Supporting leadership and project coordination. Active in women\'s development programs and youth mentorship.'
     },
     {
-      name: 'Mr. Thabo Mogapi',
+      name: 'Mrs. Violet Onny Kaome',
       position: 'Secretary',
-      initials: 'TM',
+      initials: 'VK',
       description: 'Managing records and correspondence. Handles all committee documentation and communication with government officials.'
     },
     {
-      name: 'Mrs. Mma-Kgomo Sekai',
+      name: 'Mrs. Onneile Lodic Stoffel',
+      position: ' Vice Secretary',
+      initials: 'OS',
+      description: 'Managing records and correspondence. Handles all committee documentation and communication with government officials.'
+    },
+    {
+      name: 'Mrs. Kebashebile Mbinda Mangate',
       position: 'Treasurer',
-      initials: 'MS',
+      initials: 'KM',
       description: 'Financial management and budget oversight. Ensures transparent handling of committee funds and project finances.'
     },
     {
-      name: 'Mr. Lesego Motlhaping',
-      position: 'Development Projects Coordinator',
-      initials: 'LM',
-      description: 'Specializes in infrastructure and water projects coordination. Liaisons with contractors and government agencies.'
+      name: 'Mr. Tiro Sylvester Ramontsho',
+      position: 'Additional Member',
+      initials: 'TR',
+      description: 'Social Entrepreneurship.Youth Community Mobiliser,Youth Led Advocater.community enagegement'
     },
     {
-      name: 'Mrs. Boitumelo Gaolathe',
-      position: 'Community Outreach Coordinator',
-      initials: 'BG',
-      description: 'Focuses on community engagement and social programs. Organizes health campaigns and educational initiatives.'
+      name: 'Mrs. Vetondaje Mbaeva',
+      position: 'Additional Member',
+      initials: 'VM',
+      description: 'Women Empowerment Led initiatives.'
     }
   ]
 
