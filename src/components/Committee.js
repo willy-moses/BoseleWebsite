@@ -35,7 +35,7 @@ export default function Committee() {
       name: 'Mr. Tiro Sylvester Ramontsho',
       position: 'Additional Member',
       initials: 'TR',
-      description: 'Social Entrepreneurship.Youth Community Mobiliser,Youth Led Advocater.community enagegement'
+      description: 'Social Entrepreneurship.Youth Community Mobiliser,Youth Led Advocate.community enagegement'
     },
     {
       name: 'Mrs. Vetondaje Mbaeva',
