@@ -27,7 +27,25 @@ export default function Gallery() {
       alt: 'Community Garden',
       title: 'Community Garden',
       description: 'Fresh vegetables for all'
-    }
+    },
+    {
+      src: '/images/dropout.jpg',
+      alt: 'Community Garden',
+      title: 'Community Garden',
+      description: 'Fresh vegetables for all'
+    },
+    {
+      src: '/images/culture1.jpg',
+      alt: 'Community Garden',
+      title: 'Community Garden',
+      description: 'Fresh vegetables for all'
+    },
+    {
+      src: '/images/culture2.jpg',
+      alt: 'Community Garden',
+      title: 'Community Garden',
+      description: 'Fresh vegetables for all'
+    },
   ]
 
   return (
