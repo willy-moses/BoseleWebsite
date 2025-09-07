@@ -5,42 +5,49 @@ export default function Committee() {
       name: 'Mr. Komberes Monyatse ',
       position: 'Chairperson',
       initials: 'KM',
+      image: '/images/komberes-monyatse.jpg', // Add image path
       description: 'Leading committee meetings and community initiatives. Experienced community leader with over 10 years of service.'
     },
     {
       name: 'Mrs. Sandy Botshake',
       position: 'Vice Chairperson',
       initials: 'SB',
+      image: '/images/sandy-botshake.jpg', // Add image path
       description: 'Supporting leadership and project coordination. Active in women\'s development programs and youth mentorship.'
     },
     {
       name: 'Mrs. Violet Onny Kaome',
       position: 'Secretary',
       initials: 'VK',
+      image: '/images/violet-kaome.jpg', // Add image path
       description: 'Managing records and correspondence. Handles all committee documentation and communication with government officials.'
     },
     {
       name: 'Mrs. Onneile Lodic Stoffel',
       position: ' Vice Secretary',
       initials: 'OS',
+      image: '/images/onneile-stoffel.jpg', // Add image path
       description: 'Managing records and correspondence. Handles all committee documentation and communication with government officials.'
     },
     {
       name: 'Mrs. Kebashebile Mbinda Mangate',
       position: 'Treasurer',
       initials: 'KM',
+      image: '/images/kebashebile-mangate.jpg', // Add image path
       description: 'Financial management and budget oversight. Ensures transparent handling of committee funds and project finances.'
     },
     {
       name: 'Mr. Tiro Sylvester Ramontsho',
       position: 'Additional Member',
       initials: 'TR',
+      image: '/images/tiro-ramontsho.jpg', // Add image path
       description: 'Social Entrepreneurship.Youth Community Mobiliser,Youth Led Advocate.community enagegement'
     },
     {
       name: 'Mrs. Vetondaje Mbaeva',
       position: 'Additional Member',
       initials: 'VM',
+      image: '/images/vetondaje-mbaeva.jpg', // Add image path
       description: 'Women Empowerment Led initiatives.'
     }
   ]
@@ -48,14 +55,30 @@ export default function Committee() {
   return (
     <section id="committee" className="py-16 px-4 bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12  to-green-700">Committee Members</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 to-green-700 bg-clip-text text-transparent">Committee Members</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {members.map((member, index) => (
             <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              {/* Avatar with Initials */}
+              {/* Profile Picture */}
               <div className="flex items-center mb-4">
-                <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
-                  {member.initials}
+                <div className="w-16 h-16 mr-4 relative">
+                  <img
+                    src={member.image}
+                    alt={`${member.name} profile`}
+                    className="w-full h-full rounded-full object-cover border-2 border-blue-200"
+                    onError={(e) => {
+                      // Fallback to initials if image fails to load
+                      e.target.style.display = 'none';
+                      e.target.nextSibling.style.display = 'flex';
+                    }}
+                  />
+                  {/* Fallback initials div (hidden by default) */}
+                  <div 
+                    className="w-full h-full bg-blue-500 text-white rounded-full flex items-center justify-center text-xl font-bold absolute top-0 left-0"
+                    style={{ display: 'none' }}
+                  >
+                    {member.initials}
+                  </div>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-800">{member.name}</h3>
@@ -81,7 +104,7 @@ export default function Committee() {
             <div className="flex items-center text-gray-600">
               <svg className="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002-2h12a2 2 0 002-2V8.118z" />
               </svg>
               committee@community.bw
             </div>
