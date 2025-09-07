@@ -32,7 +32,7 @@ export default function Committee() {
       name: 'Mrs. Onneile Lodic Stoffel',
       position: 'Vice Secretary',
       initials: 'OS',
-      image: '/images/onneile-stoffel2.JPG',
+      image: '/images/onneile-stoffel2.jpg', // Changed from .JPG to .jpg
       description: 'Managing records and correspondence. Handles all committee documentation and communication with government officials.'
     },
     {
