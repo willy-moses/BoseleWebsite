@@ -57,14 +57,14 @@ export default function Committee() {
       description: 'Women Empowerment Led initiatives.'
     },
     {
-      name: 'Mrs. Doreen Ngakaemang',
+      name: 'Mrs. [Social Worker Name]',
       position: 'Social Worker',
-      initials: 'DN',
+      initials: 'SW',
       image: '/images/social-worker.jpg',
       description: 'Community social welfare programs and support services. Assists families and individuals with social challenges and connects them to resources.'
     },
     {
-      name: 'Mr. Pontsho Ditshwene',
+      name: 'Mr./Mrs. [Village Councillor Name]',
       position: 'Village Councillor',
       initials: 'VC',
       image: '/images/village-councillor.jpg',
@@ -137,7 +137,10 @@ export default function Committee() {
                           }`}
                           quality={95} // Higher quality
                           priority={index < 4} // Prioritize first 4 images
-                          onError={() => handleImageError(index)}
+                          onError={(e) => {
+                            console.log(`Image failed to load: ${member.image}`);
+                            handleImageError(index);
+                          }}
                           onLoad={() => handleImageLoad(index)}
                           onLoadStart={() => handleImageStart(index)}
                           style={{ 
