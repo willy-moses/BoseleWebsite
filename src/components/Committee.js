@@ -18,7 +18,7 @@ export default function Committee() {
       name: 'Mrs. Sandy Botshake',
       position: 'Vice Chairperson',
       initials: 'SB',
-      image: '/images/sandy-botshake.JPG',
+      image: '/images/sandy-botshake.jpg',
       description: 'Supporting leadership and project coordination. Active in women\'s development programs and youth mentorship.'
     },
     {
@@ -57,14 +57,14 @@ export default function Committee() {
       description: 'Women Empowerment Led initiatives.'
     },
     {
-      name: 'Mrs. [Social Worker Name]',
+      name: 'Mrs. Doreen Ngakaemang',
       position: 'Social Worker',
-      initials: 'SW',
+      initials: 'DN',
       image: '/images/social-worker.jpg',
       description: 'Community social welfare programs and support services. Assists families and individuals with social challenges and connects them to resources.'
     },
     {
-      name: 'Mr./Mrs. [Village Councillor Name]',
+      name: 'Mr. Pontsho Ditshwene',
       position: 'Village Councillor',
       initials: 'VC',
       image: '/images/village-councillor.jpg',
@@ -137,10 +137,7 @@ export default function Committee() {
                           }`}
                           quality={95} // Higher quality
                           priority={index < 4} // Prioritize first 4 images
-                          onError={(e) => {
-                            console.log(`Image failed to load: ${member.image}`);
-                            handleImageError(index);
-                          }}
+                          onError={() => handleImageError(index)}
                           onLoad={() => handleImageLoad(index)}
                           onLoadStart={() => handleImageStart(index)}
                           style={{ 
