@@ -1,6 +1,6 @@
-// src/components/Committee.js
 "use client"
 import { useState } from 'react'
+import Image from 'next/image'
 
 export default function Committee() {
   const [imageErrors, setImageErrors] = useState({})
@@ -32,13 +32,13 @@ export default function Committee() {
       name: 'Mrs. Onneile Lodic Stoffel',
       position: 'Vice Secretary',
       initials: 'OS',
-      image: '/images/onneile-stoffel2.jpg', // Changed from .JPG to .jpg
+      image: '/images/onneile-stoffel2.jpg',
       description: 'Managing records and correspondence. Handles all committee documentation and communication with government officials.'
     },
     {
       name: 'Mrs. Kebashebile Mbinda Mangate',
       position: 'Treasurer',
-      initials: 'KM',
+      initials: 'KB', // Changed from KM to avoid confusion
       image: '/images/kebashebile-mangate2.jpg',
       description: 'Financial management and budget oversight. Ensures transparent handling of committee funds and project finances.'
     },
@@ -55,6 +55,20 @@ export default function Committee() {
       initials: 'VM',
       image: '/images/vetondaje-mbaeva2.jpg',
       description: 'Women Empowerment Led initiatives.'
+    },
+    {
+      name: 'Mrs. Doreen Ngakaemang',
+      position: 'Social Worker',
+      initials: 'DN',
+      image: '/images/social-worker.jpg',
+      description: 'Community social welfare programs and support services. Assists families and individuals with social challenges and connects them to resources.'
+    },
+    {
+      name: 'Mr. Pontsho Ditshwene',
+      position: 'Village Councillor',
+      initials: 'VC',
+      image: '/images/village-councillor.jpg',
+      description: 'Government liaison and community representation. Serves as the official link between the village and district administration.'
     }
   ]
 
@@ -100,31 +114,41 @@ export default function Committee() {
               key={`${member.name}-${index}`} 
               className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
-              {/* Profile Picture */}
+              {/* Profile Picture - Improved version */}
               <div className="flex items-start mb-4">
-                <div className="w-20 h-20 mr-4 relative flex-shrink-0">
+                <div className="w-24 h-24 mr-4 relative flex-shrink-0"> {/* Increased size for better quality */}
                   {!imageErrors[index] ? (
                     <>
                       {imageLoading[index] && (
-                        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full animate-pulse flex items-center justify-center">
+                        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full animate-pulse flex items-center justify-center z-10">
                           <div className="w-6 h-6 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                         </div>
                       )}
-                      <img
-                        src={member.image}
-                        alt={`${member.name} - ${member.position}`}
-                        className={`w-full h-full rounded-full object-cover object-center border-3 border-blue-200 bg-gray-100 shadow-md transition-opacity duration-300 ${
-                          imageLoading[index] ? 'opacity-0' : 'opacity-100'
-                        }`}
-                        onError={() => handleImageError(index)}
-                        onLoad={() => handleImageLoad(index)}
-                        onLoadStart={() => handleImageStart(index)}
-                        loading="lazy"
-                        style={{ aspectRatio: '1/1' }}
-                      />
+                      
+                      {/* Using Next.js Image for better optimization */}
+                      <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg ring-2 ring-blue-200">
+                        <Image
+                          src={member.image}
+                          alt={`${member.name} - ${member.position}`}
+                          fill
+                          sizes="(max-width: 768px) 96px, 96px"
+                          className={`object-cover transition-opacity duration-500 ${
+                            imageLoading[index] ? 'opacity-0' : 'opacity-100'
+                          }`}
+                          quality={95} // Higher quality
+                          priority={index < 4} // Prioritize first 4 images
+                          onError={() => handleImageError(index)}
+                          onLoad={() => handleImageLoad(index)}
+                          onLoadStart={() => handleImageStart(index)}
+                          style={{ 
+                            objectPosition: 'center top',
+                            imageRendering: 'high-quality',
+                          }}
+                        />
+                      </div>
                     </>
                   ) : (
-                    <div className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center text-xl font-bold border-3 border-blue-200 shadow-md">
+                    <div className="w-full h-full bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center text-xl font-bold border-4 border-white shadow-lg ring-2 ring-blue-200">
                       {member.initials}
                     </div>
                   )}
