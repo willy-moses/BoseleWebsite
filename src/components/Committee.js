@@ -18,7 +18,7 @@ export default function Committee() {
       name: 'Mrs. Sandy Botshake',
       position: 'Vice Chairperson',
       initials: 'SB',
-      image: '/images/sandy-botshake.jpg',
+      image: '/images/sandy-botshake.JPG',
       description: 'Supporting leadership and project coordination. Active in women\'s development programs and youth mentorship.'
     },
     {
